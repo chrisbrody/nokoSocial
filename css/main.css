@@ -21,6 +21,9 @@
     --search-padding: 0.6rem 1rem;
 
     --transition: all 300ms ease;
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
 }
 
 *,
@@ -39,7 +42,7 @@ body {
     background: var(--color-light);
     color: var(--color-dark);
     font-family: "Poppins", sans-serif;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .container {
@@ -131,4 +134,153 @@ nav .create {
     overflow: hidden;
     width: 2.7rem;
 }
+/* ======================================
+    END OF NAVIGATION
+====================================== */
 
+/* ======================================
+    START OF MAIN
+====================================== */
+main {
+    position: relative;
+    top: 5.4rem;
+}
+
+main .container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 18vw auto 20vw;
+    position: relative;
+}
+
+/* ======= LEFT ======= */
+main .container .left {
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-left);
+}
+
+main .container .left .profile {
+    align-items: center;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    column-gap: 1rem;
+    display: flex;
+    padding: var(--card-padding);
+    width: 100%;
+}
+ 
+.left .sidebar {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
+
+.left .sidebar .menu-item {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 4rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.left .sidebar .menu-item:hover {
+    background: var(--color-light);
+}
+
+.left .sidebar i {
+    color: var(--color-gray);
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    position: relative;
+}
+
+.left .sidebar i .notification-count {
+    background: var(--color-danger);
+    border-radius: 0.8rem;
+    color: var(--color-white);
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    position: absolute;
+    right: -0.3rem;
+    top: -0.2rem;
+    width: fit-content;
+}
+
+.left .sidebar span{
+    font-size: 1rem;
+    margin-left: 1.5rem;
+}
+
+.left .sidebar .active {
+    background: var(--color-light);
+}
+
+.left .sidebar .active i,
+.left .sidebar .active span {
+    color: var(--color-primary);
+}
+
+.left .sidebar .active::before {
+    background: var(--color-primary);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 0.5rem;
+}
+
+.left .sidebar .menu-item:first-child.active{
+    border-top-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.left .sidebar .menu-item:last-child.active{
+    border-bottom-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.left .btn {
+    margin-top: 1rem;
+    pad: 1rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* ======= NOTIFICATIONS POPUP ======= */
+.left .notifications-popup {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 0 2rem hsl( var(--color-primary), 75%, 60% 25% );
+    display: none;
+    left: 110%;
+    padding: var(--card-padding);
+    position: absolute;
+    top: 0;
+    width: 30rem;
+    z-index: 8;
+}
+
+.left .notifications-popup::before {
+    background: var(--color-white);
+    content: "";
+    display: block;
+    height: 1.2rem;
+    left: -0.6rem;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.left .notifications-popup > div {
+    align-items: start;
+    display: flex;
+    gap: 1rem;
+}
+
+.left .notifications-popup small {
+    display: block;
+}
+/* ======================================
+    END OF MAIN
+====================================== */

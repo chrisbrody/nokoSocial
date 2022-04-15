@@ -281,6 +281,88 @@ main .container .left .profile {
 .left .notifications-popup small {
     display: block;
 }
+
+/* ======= MIDDLE STORIES ======= */
+.middle .stories {
+    display: flex;
+    gap: 0.5rem;
+    height: 12rem;
+    justify-content: space-between;
+}
+
+.middle .stories .story {
+    align-items: center;
+    border-radius: var(--card-border-radius);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: var(--card-padding);
+    position: relative;
+    width: 100%;
+}
+
+.middle .stories .story::before {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 5rem;
+    position: absolute;
+    width: 100%;
+}
+
+.middle .stories .story .name {
+    z-index: 2;
+}
+
+.middle .stories .story:nth-child(1) {
+    background: url("../img/story-1.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(2) {
+    background: url("../img/story-2.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(3) {
+    background: url("../img/story-3.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(4) {
+    background: url("../img/story-4.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(5) {
+    background: url("../img/story-5.jpg") no-repeat center center/cover;
+}
+.middle .stories .story:nth-child(6) {
+    background: url("../img/story-6.jpg") no-repeat center center/cover;
+}
+
+.middle .stories .story .profile-photo {
+    align-items: start;
+    border: 3px solid var(--color-primary);
+    height: 2rem;
+    width: 2rem;
+}
+
+/* ======= MIDDLE CREATE POSTS ======= */
+.middle .create-post {
+    align-items: center;
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0.4rem var(--card-padding);
+    width: 100%;
+}
+
+.middle .create-post input[type="text"] {
+    background: transparent;
+    color: var(--color-dark);
+    justify-content: start;
+    margin-right: 1rem;
+    padding-left: 1rem;
+}
 /* ======================================
     END OF MAIN
 ====================================== */

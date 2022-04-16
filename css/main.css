@@ -363,6 +363,63 @@ main .container .left .profile {
     margin-right: 1rem;
     padding-left: 1rem;
 }
+
+/* ======= MIDDLE FEEDS ======= */
+.middle .feeds .feed {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+    padding: var(--card-padding);
+}
+
+.middle .feed .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle .feed .user {
+    display: flex;
+    gap: 1rem;
+}
+
+.middle .feed .photo {
+    border-radius: var(--card-border-radius);
+    margin: 0.7rem 0;
+    overflow: hidden;
+} 
+
+.middle .feed .action-buttons {
+    align-items: center;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    margin: 0.6rem;
+}
+
+.middle .liked-by {
+    display: flex;
+}
+
+.middle .liked-by span {
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    display: block;
+    height: 1.4rem;
+    margin-left: -0.6rem;
+    overflow: hidden;
+    width: 1.4rem;
+}
+
+.middle .liked-by span:first-child {
+    margin: 0;
+}
+
+.middle .liked-by p {
+    margin-left: 0.5rem;
+}
+
 /* ======================================
     END OF MAIN
 ====================================== */

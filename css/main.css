@@ -104,13 +104,13 @@ nav .container {
     justify-content: space-between;
 }
 
-nav .search-bar {
+.search-bar {
     background: var(--color-light);
     border-radius: var(--border-radius);
     padding: var(--search-padding);
 }
 
-nav .search-bar input[type="search"] {
+.search-bar input[type="search"] {
     background: transparent;
     color: var(--color-black);
     font-size: 0.9rem;
@@ -419,7 +419,123 @@ main .container .left .profile {
 .middle .liked-by p {
     margin-left: 0.5rem;
 }
-
 /* ======================================
     END OF MAIN
+====================================== */
+
+/* ======================================
+    START OF RIGHT
+====================================== */
+main .container .right {
+    height: max-content;
+    position: sticky;
+    top: 75px;
+}
+/* ======= RIGHT MESSAGES ======= */
+main .right .messages {
+    background: var(--color-white);
+    border-radius: 1rem;
+    padding: var(--card-padding);
+}
+
+main .right .messages .heading {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+main .right .messages i {
+    font-size: 1.4rem;
+}
+
+main .right .messages .search-bar {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+main .right .messages .category {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+main .right .messages .category h6 {
+    border-bottom: 4px solid var(--color-light);
+    font-size: 0.85rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+main .right .messages .category .active {
+    border-color: var(--color-dark)
+}
+
+main .right .messages .message-requests {
+    color: var(--color-primary);
+}
+
+main .right .messages .message {
+    align-items: start;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+main .right .messages .message .profile-photo {
+    position: relative;
+    overflow: visible;
+}
+main .right .messages .message .profile-photo img {
+    border-radius: 50%;
+}
+
+main .right .messages .message:last-child {
+    margin: 0;
+}
+
+main .right .messages .message p {
+    font-size: 0.8rem;
+}
+
+main .right .messages .message .profile-photo .active {
+    background: var(--color-success);
+    border: 3px solid var(--color-white);
+    border-radius: 50%;
+    bottom: 0;
+    height: 0.8rem;
+    position: absolute;
+    right: 0;
+    width: 0.8rem;
+}
+/* ======= RIGHT FRIEND REQUESTS ======= */
+.right .friend-requests {
+    margin-top: 1rem;
+}
+
+.right .friend-requests h4 {
+    color: var(--color-gray);
+    margin: 1rem 0;
+}
+
+.right .request {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 0.7rem;
+    padding: var(--card-padding);
+}
+
+.right .request .info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.right .request .action {
+    display: flex;
+    gap: 1rem;
+}
+/* ======================================
+    END OF RIGHT
 ====================================== */

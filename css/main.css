@@ -560,6 +560,7 @@ main .right .messages .message .profile-photo .active {
 .customize-theme .card {
     background: var(--color-white);
     border-radius: var(--card-border-radius);
+    box-shadow: 0 0 1rem var(--color-primary);
     padding: 3rem;
     width: 50%;
 }
@@ -723,6 +724,11 @@ main .right .messages .message .profile-photo .active {
 
     .left .btn {
         display: none;
+    }
+
+    .customize-theme .card { 
+        height: 60vh;
+        width: 92vw;
     }
 }
 /* ======================================

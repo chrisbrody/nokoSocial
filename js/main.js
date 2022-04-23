@@ -1,13 +1,17 @@
 // SIDEBAR
 const menuItems = document.querySelectorAll('.menu-item');
 
-// MESSAGES
+// MESSAGE
 const messagesNotification = document.querySelector('#messages-notification');
 const messageNotificationCount = messagesNotification.querySelector('.notification-count');
 
 const messages = document.querySelector('.messages');
 const message = messages.querySelectorAll('.message');
 const messageSearch = document.querySelector('#message-search');
+
+// THEME
+const theme = document.querySelector('#theme');
+const themeModal = document.querySelector('.customize-theme');
 
 // ==================== SIDEBAR ====================
 
@@ -58,3 +62,21 @@ messagesNotification.addEventListener('click', () => {
         messageNotificationCount.style.display = 'block';
     }, 2000)
 });
+
+// ==================== THEME DISPLAY ====================
+// open modal
+const openThemeModal = () => {
+    console.log('clicked');
+    themeModal.style.display = 'grid';
+}
+
+theme.addEventListener('click', openThemeModal);
+
+// close modal 
+const closeThemeModal = (e) => {
+    if(e.target.classList.contains('customize-theme')) {
+        themeModal.style.display = 'none';
+    }
+}
+
+themeModal.addEventListener('click', closeThemeModal);

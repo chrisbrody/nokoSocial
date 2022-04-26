@@ -15,6 +15,10 @@ const themeModal = document.querySelector('.customize-theme');
 const fontSizes = document.querySelectorAll('.choose-size span');
 var root = document.querySelector(':root');
 const colorPalette = document.querySelectorAll('.choose-color span');
+const bg1 = document.querySelector('.bg-1');
+const bg2 = document.querySelector('.bg-2');
+const bg3 = document.querySelector('.bg-3');
+
 
 // ==================== SIDEBAR ====================
 
@@ -145,3 +149,49 @@ colorPalette.forEach(color => {
         root.style.setProperty('--primary-color-hue', primaryHue)
     })
 })
+
+// ==================== THEME BACKGROUND ====================
+let lightColorLightness;
+let whiteColorLightness;
+let darkColorLightness;
+
+const changeBG = () => {
+    root.style.setProperty('--light-color-lightness', lightColorLightness);
+    root.style.setProperty('--white-color-lightness', whiteColorLightness);
+    root.style.setProperty('--dark-color-lightness', darkColorLightness);
+}
+
+bg1.addEventListener('click', () => {
+    bg1.classList.add('active');
+
+    bg3.classList.remove('active');
+    bg2.classList.remove('active');
+
+    window.location.reload();
+});
+
+bg2.addEventListener('click', () => {
+    darkColorLightness = '95%';
+    whiteColorLightness = '20%';
+    lightColorLightness = '15%';
+
+    bg2.classList.add('active');
+
+    bg1.classList.remove('active');
+    bg3.classList.remove('active');
+
+    changeBG();
+});
+
+bg3.addEventListener('click', () => {
+    darkColorLightness = '90%';
+    whiteColorLightness = '10%';
+    lightColorLightness = '0%';
+
+    bg3.classList.add('active');
+
+    bg1.classList.remove('active');
+    bg2.classList.remove('active');
+
+    changeBG();
+});

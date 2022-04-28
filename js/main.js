@@ -73,7 +73,6 @@ messagesNotification.addEventListener('click', () => {
 // ==================== THEME DISPLAY ====================
 // open modal
 const openThemeModal = () => {
-    console.log('clicked');
     themeModal.style.display = 'grid';
 }
 theme.addEventListener('click', openThemeModal);
@@ -87,7 +86,7 @@ const closeThemeModal = (e) => {
 themeModal.addEventListener('click', closeThemeModal);
 
 // ==================== FONTS ====================
-// remove active class from spans or font size selectors
+// remove active class from spans for font size selectors
 const removeSizeSelector = () => {
     fontSizes.forEach(size => {
         size.classList.remove('active');
@@ -129,10 +128,20 @@ fontSizes.forEach(size => {
 })
 
 // ==================== COLORS ====================
-console.log(colorPalette);
+// remove active class from spans for color selectors
+const removeColorSelector = () => {
+    colorPalette.forEach(color => {
+        color.classList.remove('active');
+    });
+}
 colorPalette.forEach(color => {
     color.addEventListener('click', () => {
+        console.log('clicked');
+        removeColorSelector();
+
         let primary;
+        console.log(color);
+        color.classList.toggle('active');
 
         if(color.classList.contains('color-1')) {
             primaryHue = 252;
@@ -146,7 +155,7 @@ colorPalette.forEach(color => {
             primaryHue = 202;
         }
 
-        root.style.setProperty('--primary-color-hue', primaryHue)
+        root.style.setProperty('--primary-color-hue', primaryHue);
     })
 })
 
